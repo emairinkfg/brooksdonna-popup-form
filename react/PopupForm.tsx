@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'; 
+//@ts-ignore
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './styles/style.css';
 
 const PopupForm = () => {
-  
-  console.log("MODAL IS HERE")
+
   const acronym = "NW"
 
   //@ts-ignore
@@ -30,11 +30,11 @@ const PopupForm = () => {
   }, [name, email, birthDay, optin, success]);
 
 
-  const maskDateInput = (e : any) => {
+  const maskDateInput = (e: any) => {
     const inputValue = e?.target?.value;
-    
+
     const numericValue = inputValue.replace(/\D/g, '');
-    
+
     if (numericValue.length <= 2) {
       e.target.value = numericValue;
     } else if (numericValue.length <= 4) {
@@ -44,7 +44,7 @@ const PopupForm = () => {
     }
 
     const newValue = e.target.value
-      
+
     const arr = newValue.split("/"), day = arr[0], month = arr[1], year = arr[2], time = "00:00:00"
     const newBirthday = new Date(`${year}-${month}-${day}T${time}`)
 
@@ -60,7 +60,7 @@ const PopupForm = () => {
     setShowModal(false);
   };
 
-  const isValidEmail = (email : string) => {
+  const isValidEmail = (email: string) => {
     return /\S+@\S+\.\S+/.test(email);
   };
 
@@ -68,13 +68,13 @@ const PopupForm = () => {
     console.log("Handle Submit,", e)
 
     const checkbox = document.getElementById("checkNewsletterTerms") as HTMLInputElement
-    
+
     if (!name || !email || !birthDay || !checkbox.checked) {
-      
-        if (!name) return alert("Digite um nome válido")
-        if (!email || !isValidEmail(email)) return alert("Digite um email válido")
-        if (!birthDay) return alert("Insira uma data de nascimento válida")
-        if (!checkbox.checked) return alert("É obrigatório o aceite do termo de consentimento")
+
+      if (!name) return alert("Digite um nome válido")
+      if (!email || !isValidEmail(email)) return alert("Digite um email válido")
+      if (!birthDay) return alert("Insira uma data de nascimento válida")
+      if (!checkbox.checked) return alert("É obrigatório o aceite do termo de consentimento")
 
     }
 
@@ -89,7 +89,7 @@ const PopupForm = () => {
         body: JSON.stringify({
           name,
           email,
-          birthday : birthDay
+          birthday: birthDay
         }),
       })
 
@@ -98,7 +98,7 @@ const PopupForm = () => {
       setSuccess(true)
     }
 
-    catch(e) {
+    catch (e) {
       alert("Houve um problema ao se cadastrar, por favor tente mais tarde.")
     }
   }
@@ -106,59 +106,59 @@ const PopupForm = () => {
     <>
       {showModal && (
         <div id={"modalBackground"} className={styles.modal_overlay}>
-          <div className={ `${styles.modal_container} ${success ? styles.modal_container_bgWhite : null}`}>
+          <div className={`${styles.modal_container} ${success ? styles.modal_container_bgWhite : null}`}>
             {(!success) && (<>
               <div className={styles.modal__left}>
-                  <button className={styles.modal_close__mobile} onClick={() => {closeModal()}}>
-                      x
+                <button className={styles.modal_close__mobile} onClick={() => { closeModal() }}>
+                  x
+                </button>
+              </div><div className={styles.modal__right}>
+                <div className={styles.modal__head}>
+                  <button className={styles.modal_close} onClick={() => { closeModal() }}>
+                    x
                   </button>
-                </div><div className={styles.modal__right}>
-                    <div className={styles.modal__head}>
-                      <button className={styles.modal_close} onClick={() => {closeModal()}}>
-                        x
-                      </button>
-                    </div>
+                </div>
 
-                    <div className={styles.modal__body}>
-                      <div className={styles.popup__formTitle}> Brooks Donna </div>
-                      <div className={styles.popup__formGreetings}> seja bem-vinda! </div>
-                      <div className={styles.popup__formText}> Cadastre-se para receber as <br/> novidades do momento & <br /><strong> Ganhe 10% OFF</strong> na 1° compra </div>
+                <div className={styles.modal__body}>
+                  <div className={styles.popup__formTitle}> Brooks Donna </div>
+                  <div className={styles.popup__formGreetings}> seja bem-vinda! </div>
+                  <div className={styles.popup__formText}> Cadastre-se para receber as <br /> novidades do momento & <br /><strong> Ganhe 10% OFF</strong> na 1° compra </div>
 
-                      <div className={styles.modal__formWrap}>
-                        <input type="text" name="name" placeholder="Nome completo" className={styles.inputFullWidth} onChange={(e) => { setName(e.target.value); } } />
-                        <input type="email" name="email" placeholder="E-mail" className={styles.inputFullWidth} onChange={(e) => { setEmail(e.target.value); } } />
-                        <input className={`${styles.inputCalendar} ${styles.inputFullWidth}`} type='text' placeholder='Data de nascimento' onChange={(element) => { (setBirthday(element.target.valueAsDate as any), maskDateInput(element)); } } />
-                        <div className={styles.optinWrapp}>
-                          <input id={"checkNewsletterTerms"} className={styles.institutionalCheckbox} type="checkbox" />
-                          
-                          Li e concordo com o <a className={styles.institutionalUrl} href="/institucional/politica-de-privacidade" target='_blank'> Termo de consentimento </a>
-                        </div>
-                        <input type="submit" onClick={(e) => { handleSubmit(e); } } className={styles.sendButton} />
-                      </div>
+                  <div className={styles.modal__formWrap}>
+                    <input type="text" name="name" placeholder="Nome completo" className={styles.inputFullWidth} onChange={(e) => { setName(e.target.value); }} />
+                    <input type="email" name="email" placeholder="E-mail" className={styles.inputFullWidth} onChange={(e) => { setEmail(e.target.value); }} />
+                    <input className={`${styles.inputCalendar} ${styles.inputFullWidth}`} type='text' placeholder='Data de nascimento' onChange={(element) => { (setBirthday(element.target.valueAsDate as any), maskDateInput(element)); }} />
+                    <div className={styles.optinWrapp}>
+                      <input id={"checkNewsletterTerms"} className={styles.institutionalCheckbox} type="checkbox" />
+
+                      Li e concordo com o <a className={styles.institutionalUrl} href="/institucional/politica-de-privacidade" target='_blank'> Termo de consentimento </a>
                     </div>
+                    <input type="submit" onClick={(e) => { handleSubmit(e); }} className={styles.sendButton} />
                   </div>
-                </>)}
-                {success && (<>
-                  <div className={styles.modal__successWrapp}>
-                    <button className={styles.modal_close} onClick={() => {closeModal()}}>
-                      x
-                    </button>
-                    <button className={styles.modal_close__mobile} onClick={() => {closeModal()}}>
-                      x
-                    </button>
-                   <img src="/arquivos/success.png" alt="modelo" width={80} height={80}/> 
-                    <p className={styles.success__message}>Cadastro realizado com sucesso!</p>
-                    <em className={styles.modal__line}> </em>
-                    <div className={styles.coupon__container}>  
-                      <p className={styles.couponTextTitle}> Use o cupom </p>
-                      <h1 className={styles.couponCode}> DONNA10 </h1>
-                      <span className={styles.couponSubText}>e aproveite um estilo exclusivo com <br/><strong>10% OFF</strong> na 1° compra</span>
-                    
-                      <input type='submit' className={styles.returnToSiteBtn} onClick={() => {closeModal()}} value="Ir para o site" /> 
-                    </div>
-                  </div>               
-                
-                </>)}
+                </div>
+              </div>
+            </>)}
+            {success && (<>
+              <div className={styles.modal__successWrapp}>
+                <button className={styles.modal_close} onClick={() => { closeModal() }}>
+                  x
+                </button>
+                <button className={styles.modal_close__mobile} onClick={() => { closeModal() }}>
+                  x
+                </button>
+                <img src="/arquivos/success.png" alt="modelo" width={80} height={80} />
+                <p className={styles.success__message}>Cadastro realizado com sucesso!</p>
+                <em className={styles.modal__line}> </em>
+                <div className={styles.coupon__container}>
+                  {/*<p className={styles.couponTextTitle}> Use o cupom </p>
+                  <h1 className={styles.couponCode}> DONNA10 </h1>
+                  <span className={styles.couponSubText}>e aproveite um estilo exclusivo com <br /><strong>10% OFF</strong> na 1° compra</span>
+                  */}
+                  <input type='submit' className={styles.returnToSiteBtn} onClick={() => { closeModal() }} value="Ir para o site" />
+                </div>
+              </div>
+
+            </>)}
           </div>
         </div>
       )}
