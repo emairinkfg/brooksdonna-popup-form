@@ -122,7 +122,7 @@ const PopupForm = () => {
                 <div className={styles.modal__body}>
                   <div className={styles.popup__formTitle}> Brooks Donna </div>
                   <div className={styles.popup__formGreetings}> seja bem-vinda! </div>
-                  <div className={styles.popup__formText}> Cadastre-se para receber as <br /> novidades do momento & <br /><strong> Ganhe 10% OFF</strong> na 1° compra </div>
+                  <div className={styles.popup__formText}> Cadastre-se para receber <strong> promoções e novidades!</strong> </div>
 
                   <div className={styles.modal__formWrap}>
                     <input type="text" name="name" placeholder="Nome completo" className={styles.inputFullWidth} onChange={(e) => { setName(e.target.value); }} />
