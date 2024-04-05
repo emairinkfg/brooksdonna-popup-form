@@ -20,7 +20,7 @@
     "@vtex/test-tools": "^3.3.2",
     "@vtex/tsconfig": "^0.4.4",
     "apollo-cache-inmemory": "^1.6.5",
-    "brooksfielddonna.popupform": "https://emairink--brooksfielddonna.myvtex.com/_v/private/typings/linked/v1/brooksfielddonna.popupform@0.1.0+build1698270532/public/@types/brooksfielddonna.popupform",
+    "brooksfielddonna.popupform": "http://brooksfielddonna.vtexassets.com/_v/public/typings/v1/brooksfielddonna.popupform@0.1.5/public/@types/brooksfielddonna.popupform",
     "graphql": "^14.6.0",
     "typescript": "3.9.7",
     "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.134.2/public/@types/vtex.render-runtime"

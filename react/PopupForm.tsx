@@ -150,10 +150,9 @@ const PopupForm = () => {
                 <p className={styles.success__message}>Cadastro realizado com sucesso!</p>
                 <em className={styles.modal__line}> </em>
                 <div className={styles.coupon__container}>
-                  {/*<p className={styles.couponTextTitle}> Use o cupom </p>
+                  <p className={styles.couponTextTitle}> Use o cupom </p>
                   <h1 className={styles.couponCode}> DONNA10 </h1>
                   <span className={styles.couponSubText}>e aproveite um estilo exclusivo com <br /><strong>10% OFF</strong> na 1° compra</span>
-                  */}
                   <input type='submit' className={styles.returnToSiteBtn} onClick={() => { closeModal() }} value="Ir para o site" />
                 </div>
               </div>

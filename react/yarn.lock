@@ -2052,9 +2052,9 @@ braces@^3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-"brooksfielddonna.popupform@https://emairink--brooksfielddonna.myvtex.com/_v/private/typings/linked/v1/brooksfielddonna.popupform@0.1.0+build1698270532/public/@types/brooksfielddonna.popupform":
-  version "0.1.0"
-  resolved "https://emairink--brooksfielddonna.myvtex.com/_v/private/typings/linked/v1/brooksfielddonna.popupform@0.1.0+build1698270532/public/@types/brooksfielddonna.popupform#8b84c0d4da5f9f9e6fe0e035bd6a8a25ea9f5476"
+"brooksfielddonna.popupform@http://brooksfielddonna.vtexassets.com/_v/public/typings/v1/brooksfielddonna.popupform@0.1.5/public/@types/brooksfielddonna.popupform":
+  version "0.1.5"
+  resolved "http://brooksfielddonna.vtexassets.com/_v/public/typings/v1/brooksfielddonna.popupform@0.1.5/public/@types/brooksfielddonna.popupform#9ee1841d84ed3267e79d73462779d2e50aa349b3"
 
 browser-process-hrtime@^1.0.0:
   version "1.0.0"
