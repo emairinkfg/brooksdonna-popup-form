@@ -11,7 +11,7 @@ const PopupForm = () => {
   //@ts-ignore
   const inputRef = useRef(null);
 
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
