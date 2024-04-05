@@ -8,8 +8,10 @@
     src: url(../../fonts/DuruSans-Regular.ttf);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 .modal_overlay {
-    background: rgba(0,0,0,.7);
+    background: rgba(0, 0, 0, .7);
     display: flex;
     align-items: center;
     height: 100%;
@@ -31,7 +33,7 @@
     max-width: 650px;
     position: relative;
     width: 100%;
-    z-index: 99999999;    
+    z-index: 99999999;
 }
 
 .modal_close__mobile {
@@ -49,7 +51,8 @@
     top: 10px;
 }
 
-.modal__left, .modal__right {
+.modal__left,
+.modal__right {
     height: 100%;
 }
 
@@ -97,10 +100,18 @@
 }
 
 .popup__formText {
-    font-family: 'Montserrat',sans-serif;
-    font-size: 1.1rem;
-    margin: -4px 0 15px 0px;
+    font-family: "Outfit", sans-serif;
+    font-size: 24px;
+    width: 100%;
+    line-height: 28px;
+    max-width: 320px;
+    margin: -4px auto 16px;
     text-align: center;
+    font-weight: 400;
+}
+
+.popup__formText strong {
+    font-weight: 800;
 }
 
 .modal__formWrap {
@@ -135,13 +146,14 @@
     text-decoration: none;
 }
 
-.sendButton, .returnToSiteBtn {
+.sendButton,
+.returnToSiteBtn {
     background-color: #242424;
     border: unset;
     border-radius: 5px;
     color: #ddd;
     cursor: pointer;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.088rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -182,7 +194,8 @@
     text-align: center;
 }
 
-.success__message, .couponTextTitle {
+.success__message,
+.couponTextTitle {
     font-size: 19px;
 }
 
@@ -205,8 +218,9 @@
     .modal_container {
         display: block;
     }
-    
-    .modal_container, .modal_container_bgWhite {
+
+    .modal_container,
+    .modal_container_bgWhite {
         background: #fff;
         width: 95%;
     }
@@ -261,7 +275,7 @@
     .popup__formGreetings {
         font-size: 6rem;
     }
-    
+
     .inputCalendar {
         -webkit-appearance: none;
         appearance: none;
@@ -274,7 +288,8 @@
         font-size: 5rem;
     }
 
-    .sendButton, .returnToSiteBtn {
+    .sendButton,
+    .returnToSiteBtn {
         width: 90%;
     }
 

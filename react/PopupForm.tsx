@@ -11,7 +11,7 @@ const PopupForm = () => {
   //@ts-ignore
   const inputRef = useRef(null);
 
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -122,7 +122,7 @@ const PopupForm = () => {
                 <div className={styles.modal__body}>
                   <div className={styles.popup__formTitle}> Brooks Donna </div>
                   <div className={styles.popup__formGreetings}> seja bem-vinda! </div>
-                  <div className={styles.popup__formText}> Cadastre-se para receber <strong> promoções e novidades!</strong> </div>
+                  <div className={styles.popup__formText}> Cadastre-se para as novidades do momento & <strong> Ganhe 10% OFF </strong> na 1ª compra. </div>
 
                   <div className={styles.modal__formWrap}>
                     <input type="text" name="name" placeholder="Nome completo" className={styles.inputFullWidth} onChange={(e) => { setName(e.target.value); }} />
